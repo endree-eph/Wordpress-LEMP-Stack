@@ -12,7 +12,7 @@ tput sgr0
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update
 
-tput setaf 2; echo "Installing Nginx"
+tput setaf 2; echo "Installing Nginx..."
 sleep 2;
 tput sgr0
 sudo apt-get install nginx zip unzip pwgen -y
@@ -29,7 +29,7 @@ sudo mkdir -p /var/www/"$DOMAIN"
 cd /var/www/"$DOMAIN"
 cd ~
 
-tput setaf 2; echo "Downloading Latest Wordpress...."
+tput setaf 2; echo "Downloading Latest Wordpress..."
 sleep 2;
 tput sgr0
 sudo wget -q wordpress.org/latest.zip
@@ -37,19 +37,19 @@ sudo unzip latest.zip
 sudo mv wordpress/* /var/www/"$DOMAIN"/
 sudo rm -rf wordpress latest.zip
 
-tput setaf 2; echo "Nginx server installation completed.."
+tput setaf 2; echo "Nginx server installation completed."
 sleep 2;
 tput sgr0
 cd ~
 sudo chown www-data:www-data -R /var/www/"$DOMAIN"
 sudo systemctl restart nginx.service
 
-tput setaf 2; echo "let's install php 7.4 and modules"
+tput setaf 2; echo "Let's install php 7.4 and modules..."
 sleep 2;
 tput sgr0
 sudo apt install php7.4 php7.4-fpm -y
 sudo apt-get -y install php7.4 php7.4-fpm php7.4-mysql php-common php7.4-cli php7.4-common php7.4-json php7.4-opcache php7.4-readline php7.4-mbstring php7.4-xml php7.4-gd php7.4-curl php-memcached php-imagick php-memcache memcached graphviz php-pear php-xdebug php-msgpack
-tput setaf 2; echo "Some php.ini Tweaks"
+tput setaf 2; echo "Some php.ini Tweaks..."
 sleep 2;
 tput sgr0
 sudo sed -i "s/post_max_size = .*/post_max_size = 2000M/" /etc/php/7.4/fpm/php.ini
@@ -60,7 +60,7 @@ sudo sed -i "s/;max_input_vars = .*/max_input_vars = 5000/" /etc/php/7.4/fpm/php
 sudo sed -i "s/max_input_time = .*/max_input_time = 1000/" /etc/php/7.4/fpm/php.ini
 sudo systemctl restart php7.4-fpm.service
 
-tput setaf 2; echo "Instaling MariaDB"
+tput setaf 2; echo "Instaling MariaDB..."
 sleep 2;
 tput sgr0
 sudo apt install mariadb-server mariadb-client php7.4-mysql -y
