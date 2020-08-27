@@ -22,7 +22,7 @@ sleep 2;
 tput sgr0
 cd /etc/nginx/sites-available/
 
-sudo wget -qO "$DOMAIN" https://raw.githubusercontent.com/endree-eph/lemp-ooshi/master/example.com.conf
+sudo wget -qO "$DOMAIN" https://raw.githubusercontent.com/endree-eph/Wordpress-LEMP-Stack/master/example.com.conf
 sudo sed -i -e "s/example.com/$DOMAIN/" "$DOMAIN"
 sudo ln -s /etc/nginx/sites-available/"$DOMAIN" /etc/nginx/sites-enabled/
 sudo mkdir -p /var/www/"$DOMAIN"
