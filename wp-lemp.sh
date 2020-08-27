@@ -15,7 +15,7 @@ sudo apt-get update
 tput setaf 2; echo "Installing Nginx..."
 sleep 2;
 tput sgr0
-sudo apt-get install nginx zip unzip pwgen -y
+sudo apt-get install nginx zip unzip curl wget git pwgen -y
 
 tput setaf 2; echo "Please wait..."
 sleep 2;
